@@ -30,6 +30,7 @@ jobs:
         run: |
           touch .env
           echo DB_CLIENT=${{ secrets.DB_CLIENT }} >> .env
+          echo DB_HOST=${{ secrets.DB_HOST }} >> .env
 
       - name: Build app
         run: npm run build --production
