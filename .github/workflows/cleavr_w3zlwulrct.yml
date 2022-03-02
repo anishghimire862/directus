@@ -26,6 +26,8 @@ jobs:
 
       - uses: bahmutov/npm-install@v1
 
+      - run: mysql -u${{ secrets.DB_USER }} -p${{ secrets.DB_PASSWORD }} -h127.0.0.1 -e "FLUSH PRIVILEGES"
+
       - name: create env file
         run: |
           touch .env
