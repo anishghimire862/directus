@@ -31,6 +31,7 @@ jobs:
           touch .env
           echo DB_CLIENT=${{ secrets.DB_CLIENT }} >> .env
           echo DB_HOST=${{ secrets.DB_HOST }} >> .env
+          echo DB_PORT=${{ secrets.DB_PORT }} >> .env
 
       - name: Build app
         run: npm run build --production
