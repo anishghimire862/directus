@@ -26,6 +26,11 @@ jobs:
 
       - uses: bahmutov/npm-install@v1
 
+      - name: create env file
+        run: |
+          touch .env
+          echo DB_CLIENT=${{ secrets.DB_CLIENT }} >> .env
+
       - name: Build app
         run: npm run build --production
 
